@@ -5,24 +5,29 @@
 	<parent>
 		<groupId>com.designer-stop.server</groupId>
 		<artifactId>designer-stop-services</artifactId>
- 		<version>1.0.0-SNAPSHOT</version>
+ 		<version>1.0.0-snapshot</version>
 	</parent>
 	<artifactId>designer-stop-webapp</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>designer-stop-webapp</name>
 	<description>Services to empower the design components with data</description>
 	<properties>
 		<java.version>1.8</java.version>
+		<build.number>0</build.number>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<dependencyManagement>
 	<dependencies>
 		<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
-            <version>2.1.6.RELEASE</version>
+            <version>2.3.1.RELEASE</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
+        </dependencies>
+        </dependencyManagement>
+     <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -48,11 +53,24 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-</dependencyManagement>
+
+	<repositories>
+		<repository>
+			<id>central</id>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<url>https://repo1.maven.org/maven2/</url>
+		</repository>
+	</repositories>
 
 	<build>
+	<pluginManagement>
 		<plugins>
-		  <plugin>
+		  <!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.0</version>
@@ -60,12 +78,11 @@
 					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
-			</plugin>
+			</plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
-				<!-- <version>3.0.0</version> -->
-				<version>2.6</version>
+				<version>3.0.0</version>
 				<configuration>
 					<packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
 					<packagingExcludes>WEB-INF/lib/bean-validator-*.jar</packagingExcludes>
@@ -75,22 +92,21 @@
 					<manifest>
 						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 					</manifest>
-					<!-- <archive>
+					<archive>
 						<manifestEntries>
 							<Build-Version>${build.number}</Build-Version>
 							<Build-Time>${maven.build.timestamp}</Build-Time>
 							<Version>${global.version}</Version>
-							<Infor-OS-Version>${infor.os.version}</Infor-OS-Version>
 						</manifestEntries>
-					</archive> -->
+					</archive>
 				</configuration>
 			</plugin>
 			<!-- <plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.3.1.RELEASE</version>
 			</plugin> -->
-			
 		</plugins>
+	 </pluginManagement>
 	</build>
-
 </project>
