@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.designer-stop.server</groupId>
+		<artifactId>designer-stop-services</artifactId>
+ 		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>designer-stop-webapp</artifactId>
+	<packaging>jar</packaging>
+	<name>designer-stop-webapp</name>
+	<description>Services to empower the design components with data</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencyManagement>
+	<dependencies>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>2.1.6.RELEASE</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
+
+	<build>
+		<plugins>
+		  <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<!-- <version>3.0.0</version> -->
+				<version>2.6</version>
+				<configuration>
+					<packagingExcludes>WEB-INF/lib/tomcat-*.jar</packagingExcludes>
+					<packagingExcludes>WEB-INF/lib/bean-validator-*.jar</packagingExcludes>
+					<packagingExcludes>WEB-INF/lib/asm-all-repackaged-*.jar</packagingExcludes>
+					<packagingExcludes>WEB-INF/lib/jsr311-api-*.jar</packagingExcludes>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<manifest>
+						<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+					</manifest>
+					<!-- <archive>
+						<manifestEntries>
+							<Build-Version>${build.number}</Build-Version>
+							<Build-Time>${maven.build.timestamp}</Build-Time>
+							<Version>${global.version}</Version>
+							<Infor-OS-Version>${infor.os.version}</Infor-OS-Version>
+						</manifestEntries>
+					</archive> -->
+				</configuration>
+			</plugin>
+			<!-- <plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin> -->
+			
+		</plugins>
+	</build>
+
+</project>
