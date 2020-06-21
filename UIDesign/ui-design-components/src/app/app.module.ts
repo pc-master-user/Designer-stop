@@ -9,6 +9,8 @@ import { CollectionsHomePageComponent } from './home-page/collections-home-page/
 import { CollectionViewComponent } from './home-page/collections-home-page/collection-view/collection-view.component';
 import { DesignerViewComponent } from './home-page/designers-home-page/designer-view/designer-view.component';
 import { ApparelViewComponent } from './home-page/apparel-view/apparel-view.component';
+import { HomePageMenComponent } from './home-page/home-page-men/home-page-men.component';
+import { HomePageWomenComponent } from './home-page/home-page-women/home-page-women.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ApparelViewComponent } from './home-page/apparel-view/apparel-view.comp
     CollectionsHomePageComponent,
     CollectionViewComponent,
     DesignerViewComponent,
-    ApparelViewComponent
+    ApparelViewComponent,
+    HomePageMenComponent,
+    HomePageWomenComponent
   ],
   imports: [
     BrowserModule,
