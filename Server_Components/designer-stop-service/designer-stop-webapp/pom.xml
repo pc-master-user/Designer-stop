@@ -58,7 +58,6 @@
 			</exclusions>
 		</dependency>
 	</dependencies>
-<<<<<<< Updated upstream
 
 	<repositories>
 		<repository>
@@ -72,22 +71,19 @@
 			<url>https://repo1.maven.org/maven2/</url>
 		</repository>
 	</repositories>
-=======
-<!-- </dependencyManagement> -->
->>>>>>> Stashed changes
 
 	<build>
 	<pluginManagement>
 		<plugins>
-		  <!-- <plugin>
+		   <!-- <plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.6.0</version>
 				<configuration>
-					<!-- <source>1.8</source>
-					<target>1.8</target> -->
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
-			</plugin> -->
+			</plugin>  -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -113,13 +109,8 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-<<<<<<< Updated upstream
 				<version>2.3.1.RELEASE</version>
-			</plugin> -->
-=======
-			</plugin> 
-			
->>>>>>> Stashed changes
+			</plugin>
 		</plugins>
 	 </pluginManagement>
 	</build>
