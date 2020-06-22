@@ -11,6 +11,7 @@ import { DesignerViewComponent } from './home-page/designers-home-page/designer-
 import { ApparelViewComponent } from './home-page/apparel-view/apparel-view.component';
 import { HomePageMenComponent } from './home-page/home-page-men/home-page-men.component';
 import { HomePageWomenComponent } from './home-page/home-page-women/home-page-women.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { HomePageWomenComponent } from './home-page/home-page-women/home-page-wo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
