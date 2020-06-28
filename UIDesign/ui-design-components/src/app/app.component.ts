@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { faFacebook, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
+import { Router } from '@angular/router'
+import { RoutingConstants } from './shared/routing-constants';
 
 @Component({
   selector: 'app-root',
@@ -13,4 +15,8 @@ export class AppComponent {
   whatsappIcon = faWhatsapp;
   shoppingCartIcon = faShoppingBasket;
   title = 'Designer Stop';
+
+  constructor(
+    private router: Router
+  ){}
 }

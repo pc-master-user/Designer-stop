@@ -7,6 +7,7 @@ import { HomePageWomenComponent }  from './home-page/home-page-women/home-page-w
 
 
 const routes: Routes = [
+  {path:'', redirectTo:RoutingConstants.HOME_PAGE, pathMatch:'full'},
   {path:RoutingConstants.HOME_PAGE, component : HomePageComponent},
   {path:RoutingConstants.HOME_PAGE_MEN, component : HomePageMenComponent},
   {path:RoutingConstants.HOME_PAGE_WOMEN, component : HomePageWomenComponent}
